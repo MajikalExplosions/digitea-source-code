@@ -25,6 +25,17 @@
       height: auto;
       min-height: 92vh;
     }
+    #settings-wrapper {
+      width: 25%;
+      height: 25%;
+      position: fixed;
+      display: block;
+    }
+    #settings-page {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
     #settings-button {
       cursor: pointer;
       height: 8vh;
@@ -116,19 +127,19 @@
     var isInSettings = false;
     var username = "User" + Math.floor(Math.random() * 10000) + 1;;
       function toggleSettings() {
+
+        var pSettings = `
+        <div id="settings-page" class="c-secondary"></div>
+        `
         //
-        alert("Hi")
+        alert("Settings Page Still Under Construction");
         return;//This function does nothing for now.
         //
-        chatBody = "";
-        settingsBody = "";
         if (isInSettings) {
-          document.getElementById("content").innerHTML = chatBody;
-          updateChat();
+          document.getElementById("settings-wrapper").innerHTML = pSettings;
         }
         else {
-          document.getElementById("content").innerHTML = settingsBody;
-          //Add settings button click code and things
+          document.getElementById("settings-wrapper").innerHTML = "";
         }
         isInSettings = ! isInSettings;
       }
@@ -178,19 +189,16 @@
         document.getElementById("chat-history").innerHTML = chatBody;
       }
       function loadedPage() {
-        alert("HI!");
         updateChat();
-        setInterval(updateChat, 2500);
+        setInterval(updateChat, 1500);
       }
     </script>
   </head>
   <body onload="loadedPage()">
+    <div id="settings-wrapper">
+    </div>
     <div id="content" class="c-primary">
       <div id="chat-history">
-      </br>
-        <div class="sent-message c-secondary"><p>Hello,</p></div>
-        <div class="chat-spacer"></div>
-        <div class="recieved-message c-secondary"><p>World!</p></div></br></br>
       </div>
     </div>
     <div id="footer" class="c-secondary">
