@@ -50,8 +50,16 @@
     }
     #theme-changer {
       position: fixed;
-      margin: auto;
+      margin: 0 auto;
       display: block;
+      outline: none;
+      border: solid;
+      border-width: 0.3vh;
+      border-radius: .5vh;
+      width: auto;
+    }
+    #theme-changer:hover {
+      border-width: 0.1vh;
     }
     #settings-button {
       cursor: pointer;
@@ -91,7 +99,6 @@
       border-radius: 1.5vh;
       height: 8vh;
       width: 84vw;
-      outline: none;
       float: left;
       overflow: hidden;
       font-size: 4vh;
@@ -134,6 +141,7 @@
       var isInSettings = false;
       var username = "User" + Math.floor(Math.random() * 10000) + 1;
       var themes = [
+      "Default|444444|888888|dddddd",
       "Sepia|9f7e69|d2bba0|f7f0e0",
       "Dark|222222|505050|d1d1d1",
       "Ocean Blue|304d6d|82a0bc|c5d5ea",
