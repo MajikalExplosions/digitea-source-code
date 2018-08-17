@@ -143,9 +143,9 @@
       ];
       function changeTheme() {
         var selectedTheme = themes[parseInt(document.getElementById("theme-changer").value, 10)];
-        var primary = selectedTheme.substring(themes[i].indexOf("|") + 1, themes[i].indexOf("|") + 7);
-        var secondary = selectedTheme.substring(themes[i].indexOf("|") + 8, themes[i].indexOf("|") + 14);
-        var accent = selectedTheme.substring(themes[i].indexOf("|") + 15, themes[i].indexOf("|") + 21);
+        var primary = selectedTheme.substring(selectedTheme.indexOf("|") + 1, selectedTheme.indexOf("|") + 7);
+        var secondary = selectedTheme.substring(selectedTheme.indexOf("|") + 8, selectedTheme.indexOf("|") + 14);
+        var accent = selectedTheme.substring(selectedTheme.indexOf("|") + 15, selectedTheme.indexOf("|") + 21);
         var cPri = document.getElementsByClassName("c-primary");
         var cSec = document.getElementsByClassName("c-secondary");
         for (var i = 0; i < cPri.length; i++) {
