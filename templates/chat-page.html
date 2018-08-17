@@ -12,6 +12,11 @@
       padding: 0px;
       font-family: Montserrat, sans-serif;
       word-wrap: break-word;
+      -o-transition:.25s;
+      -ms-transition:.25s;
+      -moz-transition:.25s;
+      -webkit-transition:.25s;
+      transition:.25s;
     }
     #footer {
       position: fixed;
@@ -83,11 +88,6 @@
       float: left;
       overflow: hidden;
       font-size: 4vh;
-      -o-transition:.5s;
-      -ms-transition:.5s;
-      -moz-transition:.5s;
-      -webkit-transition:.5s;
-      transition:.5s;
       box-sizing: border-box;
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
@@ -96,11 +96,6 @@
     }
     #chat-input:hover {
       border-width: 0.2vh;
-      -o-transition:.25s;
-      -ms-transition:.25s;
-      -moz-transition:.25s;
-      -webkit-transition:.25s;
-      transition:.25s;
     }
     #chat-history {
       margin: 0 auto;
@@ -141,8 +136,11 @@
       "Dark White|ffffff|000000|787878",
       "Light Black|000000|ffffff|787878"
       ];
-      function changeTheme() {
-        var selectedTheme = themes[parseInt(document.getElementById("theme-changer").value, 10)];
+      var selectedTheme = "Default|444444|888888|dddddd";
+      function changeTheme(isFromSettings) {
+        if (isFromSettings) {
+          selectedTheme = themes[parseInt(document.getElementById("theme-changer").value, 10)];
+        }
         var primary = selectedTheme.substring(selectedTheme.indexOf("|") + 1, selectedTheme.indexOf("|") + 7);
         var secondary = selectedTheme.substring(selectedTheme.indexOf("|") + 8, selectedTheme.indexOf("|") + 14);
         var accent = selectedTheme.substring(selectedTheme.indexOf("|") + 15, selectedTheme.indexOf("|") + 21);
@@ -161,7 +159,7 @@
         isInSettings = ! isInSettings;
         if (isInSettings) {
           var pSettings = "<div id=\"settings-page\" class=\"c-secondary\">\n";
-          pSettings += "<select onchange=\"changeTheme()\" class=\"c-secondary\" id=\"theme-changer\">";
+          pSettings += "<select onchange=\"changeTheme(true)\" class=\"c-secondary\" id=\"theme-changer\">";
           for (var i = 0; i < themes.length; i++) {
             pSettings += "<option value=\"" + i.toString() + "\">" + themes[i].substring(0, themes[i].indexOf("|"));
           }
@@ -219,6 +217,7 @@
         }
         chatBody += "<div id=\"footer-background\" style=\"min-height: 8vh;\"></div>"
         document.getElementById("chat-history").innerHTML = chatBody;
+        changeTheme(false);
       }
       function loadedPage() {
         updateChat();
