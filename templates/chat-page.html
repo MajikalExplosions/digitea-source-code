@@ -171,7 +171,6 @@ All guest numbers end in 1 **DONE**
       "Dark White|ffffff|000000|787878",
       "Light Black|000000|ffffff|787878"
       ];
-      alert("HI!");
       var selectedTheme = "Default|444444|888888|dddddd";
       function changeTheme(isFromSettings) {
         if (isFromSettings) {
@@ -194,7 +193,7 @@ All guest numbers end in 1 **DONE**
       function toggleSettings() {
         isInSettings = ! isInSettings;
         if (isInSettings) {
-          var pSettings += "<select onchange=\"changeTheme(true)\" class=\"c-secondary\" id=\"theme-changer\">";
+          var pSettings = "<select onchange=\"changeTheme(true)\" class=\"c-secondary\" id=\"theme-changer\">";
           for (var i = 0; i < themes.length; i++) {
             pSettings += "<option value=\"" + i.toString() + "\">" + themes[i].substring(0, themes[i].indexOf("|"));
           }
