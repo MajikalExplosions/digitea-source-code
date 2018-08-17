@@ -205,7 +205,7 @@ All guest numbers end in 1 **DONE**
           document.getElementById("theme-changer").innerHTML = pSettings;
           document.getElementById("settings-wrapper").style.width = "25%";
           document.getElementById("settings-wrapper").style.height = "25%";
-          document.getElementById("settings-button").style.backgroundColor = "#" + selectedTheme.substring(selectedTheme.indexOf("|") + 1, selectedTheme.indexOf("|") + 7);
+          document.getElementById("settings-button").children[0].style.fill = "#" + selectedTheme.substring(selectedTheme.indexOf("|") + 1, selectedTheme.indexOf("|") + 7);
           document.getElementById("theme-changer").style.visibility = "visible";
           //document.getElementById("theme-changer").selectedIndex
         }
@@ -213,7 +213,7 @@ All guest numbers end in 1 **DONE**
           document.getElementById("theme-changer").style.visibility = "hidden";
           document.getElementById("settings-wrapper").style.width = "0%";
           document.getElementById("settings-wrapper").style.height = "0%";
-          document.getElementById("settings-button").style.backgroundColor = "#" + selectedTheme.substring(selectedTheme.indexOf("|") + 8, selectedTheme.indexOf("|") + 14);
+          document.getElementById("settings-button").children[0].style.fill = "#" + selectedTheme.substring(selectedTheme.indexOf("|") + 5, selectedTheme.indexOf("|") + 21);
         }
       }
       function updateChat() {
