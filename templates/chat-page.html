@@ -203,6 +203,7 @@ All guest numbers end in 1 **DONE**
             pSettings += "<option value=\"" + i.toString() + "\">" + themes[i].substring(0, themes[i].indexOf("|"));
           }
           pSettings += "</select>";
+          pSettings += "</div>"
           document.getElementById("settings-wrapper").innerHTML = pSettings;
           document.getElementById("settings-wrapper").style.width = "25%";
           document.getElementById("settings-wrapper").style.height = "25%";
