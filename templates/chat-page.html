@@ -157,9 +157,8 @@
           }
         };
         xhttp.open("POST", "https://digitea.herokuapp.com/send-message");
-        xhttp.setRequestHeader('message', username + ":" + document.getElementById("chat-input").value);
+        xhttp.send('message=' + username + ":" + document.getElementById("chat-input").value);
         document.getElementById("chat-input").value = "";
-        xhttp.send();
       }
       function parseResponse(text) {
         chatBody = "</br>";
@@ -173,6 +172,7 @@
             chatBody += "<div class=\"recieved-message c-secondary\"><p>" + msg.substring(msgs[i].indexOf(":") + 1) + "</p></div><div class=\"chat-spacer\"></div>"
           }
         }
+        chatBody += "<div id=\"footer-background\" style=\"min-height: 8vh;\"></div>"
         document.getElementById("chat-history").innerHTML = chatBody;
       }
     </script>
@@ -184,7 +184,6 @@
         <div class="sent-message c-secondary"><p>Hello,</p></div>
         <div class="chat-spacer"></div>
         <div class="recieved-message c-secondary"><p>World!</p></div></br></br>
-        <div id="footer-background" style="min-height: 8vh;"></div>
       </div>
     </div>
     <div id="footer" class="c-secondary">

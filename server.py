@@ -14,7 +14,7 @@ app.debug = 'DEBUG' in os.environ
 
 sockets = Sockets(app)
 
-chatHistory = ['CoffeeTalk Lite started {}'.format(datetime.now())]
+chatHistory = [':DigiTea Server started {}'.format(datetime.now())]
 
 @app.route("/chat")
 def getPage():
