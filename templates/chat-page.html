@@ -201,14 +201,14 @@ All guest numbers end in 1 **DONE**
           document.getElementById("settings-wrapper").style.width = "25%";
           document.getElementById("settings-wrapper").style.height = "25%";
           document.getElementById("settings-button").style.backgroundColor = "#" + selectedTheme.substring(selectedTheme.indexOf("|") + 8, selectedTheme.indexOf("|") + 14);
-          document.getElementById("settings-button").style.visibility = "visible";
+          document.getElementById("theme-changer").style.visibility = "visible";
           //document.getElementById("theme-changer").selectedIndex
         }
         else {
           document.getElementById("settings-wrapper").style.width = "0%";
           document.getElementById("settings-wrapper").style.height = "0%";
           document.getElementById("settings-button").style.backgroundColor = "";
-          document.getElementById("settings-button").style.visibility = "hidden";
+          document.getElementById("theme-changer").style.visibility = "hidden";
         }
       }
       function updateChat() {
@@ -263,6 +263,7 @@ All guest numbers end in 1 **DONE**
       function loadedPage() {
         updateChat();
         setInterval(updateChat, 1500);
+        document.getElementById("theme-changer").style.visibility = "hidden";
       }
     </script>
   </head>
