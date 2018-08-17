@@ -137,6 +137,7 @@
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             var chatHistory = this.responseText;
+            parseResponse(chatHistory);
           }
         };
         xhttp.open("POST", "https://digitea.herokuapp.com/get-history");
@@ -152,10 +153,12 @@
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             var chatHistory = this.responseText;
+            parseResponse(chatHistory);
           }
         };
         xhttp.open("POST", "https://digitea.herokuapp.com/send-message");
         xhttp.setRequestHeader('message', username + ":" + document.getElementById("chat-input").value);
+        document.getElementById("chat-input").value = "";
         xhttp.send();
       }
       function parseResponse(text) {
