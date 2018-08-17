@@ -1,5 +1,17 @@
 <!DOCTYPE html>
+<!--
 
+BUGLIST:
+Settings show up in the "middle" of the window at the top, not in the middle of the current window
+Settings icon needs better animations
+Add usernames
+Theme settings dropdown needs to not always show Default
+Settings popup always has default theme
+No autoscroll
+Optimize for mobile devices
+All guest numbers end in 1 **DONE**
+
+!-->
 <html>
   <head>
     <title>DigiTea</title>
@@ -36,7 +48,7 @@
       height: 0%;
       display: block;
       margin: 0;
-      position: absolute;
+      position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -50,7 +62,7 @@
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
       opacity: 0.75;
-      position: relative;
+      position: absolute;
       -o-transition:0s;
       -ms-transition:0s;
       -moz-transition:0s;
@@ -64,7 +76,7 @@
       border-radius: .5vh;
       width: auto;
       margin: 0;
-      position: absolute;
+      position: relative;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -150,7 +162,7 @@
     </style>
     <script>
       var isInSettings = false;
-      var username = "Guest " + Math.floor(Math.random() * 10000) + 1;
+      var username = "Guest " + (Math.floor(Math.random() * 10000) + 1);
       var themes = [
       "Default|444444|888888|dddddd",
       "Sepia|9f7e69|d2bba0|f7f0e0",
