@@ -141,6 +141,7 @@
           }
         };
         xhttp.open("POST", "https://digitea.herokuapp.com/get-history");
+        http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhttp.send();
       }
       function sendMessageWrapper() {
@@ -157,7 +158,8 @@
           }
         };
         xhttp.open("POST", "https://digitea.herokuapp.com/send-message");
-        xhttp.send('message=' + username + ":" + document.getElementById("chat-input").value);
+        http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhttp.send('message=' + encodeURIComponent(username + ":" + document.getElementById("chat-input").value));
         document.getElementById("chat-input").value = "";
       }
       function parseResponse(text) {
