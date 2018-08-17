@@ -29,8 +29,7 @@
       width: 25%;
       height: 25%;
       position: fixed;
-      display: block;
-      margin: 0 auto;
+      margin: auto;
     }
     #settings-page {
       display: flex;
@@ -40,6 +39,7 @@
       box-sizing: border-box;
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
+      opacity: 0.75;
     }
     #settings-button {
       cursor: pointer;
@@ -146,12 +146,10 @@
         alert(selectedTheme);
       }
       function toggleSettings() {
-        //
-        alert("Settings Page Still Under Construction");
-        //
+        isInSettings = ! isInSettings;
         if (isInSettings) {
           var pSettings = "<div id=\"settings-page\" class=\"c-secondary\">\n";
-          pSettings += "<select onchange=\"changeTheme()\" id=\"theme-changer\">";
+          pSettings += "<select onchange=\"changeTheme()\" class=\"c-secondary\" id=\"theme-changer\">";
           for (var i = 0; i < themes.length; i++) {
             pSettings += "<option value=\"" + i.toString() + "\">" + themes[i].substring(0, themes[i].indexOf("|"));
           }
@@ -161,7 +159,6 @@
         else {
           document.getElementById("settings-wrapper").innerHTML = "";
         }
-        isInSettings = ! isInSettings;
       }
       function updateChat() {
         var xhttp = new XMLHttpRequest();
