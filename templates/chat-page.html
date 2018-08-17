@@ -32,19 +32,14 @@
       min-height: 92vh;
     }
     #settings-wrapper {
-      width: 25%;
-      height: 25%;
+      width: 0%;
+      height: 0%;
       display: block;
       margin: 0;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      -o-transition:0s;
-      -ms-transition:0s;
-      -moz-transition:0s;
-      -webkit-transition:0s;
-      transition:0s;
     }
     #settings-page {
       display: flex;
@@ -56,6 +51,11 @@
       -webkit-box-sizing: border-box;
       opacity: 0.75;
       position: relative;
+      -o-transition:0s;
+      -ms-transition:0s;
+      -moz-transition:0s;
+      -webkit-transition:0s;
+      transition:0s;
     }
     #theme-changer {
       display: block;
@@ -194,6 +194,8 @@
         }
         else {
           document.getElementById("settings-wrapper").innerHTML = "";
+          document.getElementById("settings-wrapper").style.width = "25%";
+          document.getElementById("settings-wrapper").style.height = "25%";
         }
       }
       function updateChat() {
