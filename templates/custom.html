@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Live Display</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="custom.css">
+    <style type="text/css">
+      @font-face {
+    font-family: KeepCalm;
+    font-weight: bold;
+    src: url('static/KeepCalm.ttf');
+}
+
+html,body{
+  font-size: 72px;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background: #{{clr}};
+}
+.ml6{
+  position: relative;
+  font-weight: 900;
+  font-family: 'KeepCalm', 'Montserrat', sans-serif;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  -webkit-text-fill-color: #E5E7E9;
+  background-color: #{{clr}};
+}
+.ml6.text-wrapper{
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+.ml6.letter{
+  display: inline-block;
+  line-height: 1em;
+}
+    </style>
+  </head>
+
+  <body scroll="no" style="overflow: hidden">
+    <h1 class="ml6">
+      <span class="text-wrapper">
+        <span class="letters">{{msg2}}</span>
+      </span>
+</h1>
+
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src = "custom.js"></script>
+    <script>
+      $(document).ready(function() {
+        setInterval(function(){
+          $.ajax({url: "https://live-display-commands.herokuapp.com/refresh"}).done(function(data) {
+            console.log("Pinged Server, response was " + data);
+            if (data == "refresh") {
+              window.close();//Temporary
+              window.location.reload(true);
+              data = "keep";
+            }
+          });
+        }, 5000);
+      });
+{{animation}}
+    </script>
+  </body>
+</html>
