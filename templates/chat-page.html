@@ -180,7 +180,7 @@ Copying stuff is hard(linked to one above)
       var selectedThemeNumber = 0;
       function changeTheme(isFromSettings) {
         if (isFromSettings) {
-          selectedThemeNumber = parseInt(document.getElementById("theme-changer").value, 10)];
+          selectedThemeNumber = parseInt(document.getElementById("theme-changer").value, 10);
         }
         var selectedTheme = themes[selectedThemeNumber];
         var primary = selectedTheme.substring(selectedTheme.indexOf("|") + 1, selectedTheme.indexOf("|") + 7);
