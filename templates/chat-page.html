@@ -152,7 +152,7 @@
         if (isInSettings) {
           var pSettings = "<div id=\"settings-page\" class=\"c-secondary\">\n";
           pSettings += "<select onchange=\"changeTheme()\" id=\"theme-changer\">";
-          for (int i = 0; i < themes.length; i++) {
+          for (var i = 0; i < themes.length; i++) {
             pSettings += "<option value=\"" + i.toString() + "\">" + themes[i].substring(0, themes[i].indexOf("|"));
           }
           pSettings += "</select>";
