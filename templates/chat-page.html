@@ -17,6 +17,7 @@
       -moz-transition:.25s;
       -webkit-transition:.25s;
       transition:.25s;
+      outline: none;
     }
     #footer {
       position: fixed;
@@ -33,9 +34,17 @@
     #settings-wrapper {
       width: 25%;
       height: 25%;
-      position: fixed;
-      margin: auto;
       display: block;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -o-transition:0s;
+      -ms-transition:0s;
+      -moz-transition:0s;
+      -webkit-transition:0s;
+      transition:0s;
     }
     #settings-page {
       display: flex;
@@ -50,7 +59,6 @@
     }
     #theme-changer {
       display: block;
-      outline: none;
       border: solid;
       border-width: 0.3vh;
       border-radius: .5vh;
