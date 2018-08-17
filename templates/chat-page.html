@@ -198,6 +198,7 @@
           document.getElementById("settings-wrapper").style.width = "0%";
           document.getElementById("settings-wrapper").style.height = "0%";
           document.getElementById("settings-page").innerHTML = "";
+          document.getElementById("settings-button").style.backgroundColor = "#" + selectedTheme.substring(selectedTheme.indexOf("|") + 1, selectedTheme.indexOf("|") + 7);
         }
       }
       function updateChat() {
