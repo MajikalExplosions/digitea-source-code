@@ -168,10 +168,10 @@
         for (var i = 0; i < msgs.length; i++) {
           msg = msgs[i]
           if (msg.substring(0, msgs[i].indexOf(":")) == username) {
-            chatBody += "<div class=\"sent-message c-secondary\"><p>" + msg + "</p></div><div class=\"chat-spacer\"></div>"
+            chatBody += "<div class=\"sent-message c-secondary\"><p>" + msg.substring(msgs[i].indexOf(":") + 1) + "</p></div><div class=\"chat-spacer\"></div>";
           }
           else {
-            chatBody += "<div class=\"recieved-message c-secondary\"><p>" + msg.substring(msgs[i].indexOf(":") + 1) + "</p></div><div class=\"chat-spacer\"></div>"
+            chatBody += "<div class=\"recieved-message c-secondary\"><p>" + msg + "</p></div><div class=\"chat-spacer\"></div>";
           }
         }
         chatBody += "<div id=\"footer-background\" style=\"min-height: 8vh;\"></div>"
