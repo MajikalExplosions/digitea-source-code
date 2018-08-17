@@ -188,7 +188,6 @@ Copying stuff is hard(linked to one above)
         var accent = selectedTheme.substring(selectedTheme.indexOf("|") + 15, selectedTheme.indexOf("|") + 21);
         var cPri = document.getElementsByClassName("c-primary");
         var cSec = document.getElementsByClassName("c-secondary");
-        document.getElementById("settings-icon").children[0].style.fill = "#" + selectedTheme.substring(selectedTheme.indexOf("|") + 1, selectedTheme.indexOf("|") + 7);
         for (var i = 0; i < cPri.length; i++) {
           cPri[i].style.backgroundColor = "#" + primary;
           cPri[i].style.fill = "#" + accent;
@@ -273,6 +272,7 @@ Copying stuff is hard(linked to one above)
         updateChat();
         setInterval(updateChat, 1500);
         document.getElementById("theme-changer").style.visibility = "hidden";
+        document.getElementById("settings-icon").children[0].style.fill = "#" + selectedTheme.substring(selectedTheme.indexOf("|") + 8, selectedTheme.indexOf("|") + 15);
         changeTheme(false);
       }
     </script>
