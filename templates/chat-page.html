@@ -2,14 +2,23 @@
 <!--
 
 BUGLIST:
+
 Settings show up in the "middle" of the window at the top, not in the middle of the current window **DONE**
+
 Settings icon needs better animations or fix current
+
 Add usernames
+
 Theme settings dropdown needs to not always show Default **DONE**
+
 Settings popup always has default theme **DONE**
+
 No autoscroll
+
 Optimize for mobile devices
+
 All guest numbers end in 1 **DONE**
+
 Reduce bandwidth needs(it currently gets all the chat messages all the time)
 Copying stuff is hard(linked to one above)
 !-->
@@ -272,7 +281,7 @@ Copying stuff is hard(linked to one above)
         updateChat();
         setInterval(updateChat, 1500);
         document.getElementById("theme-changer").style.visibility = "hidden";
-        document.getElementById("settings-icon").children[0].style.fill = "#" + selectedTheme.substring(selectedTheme.indexOf("|") + 8, selectedTheme.indexOf("|") + 15);
+        document.getElementById("settings-icon").children[0].style.fill = "#" + themes[selectedThemeNumber].substring(themes[selectedThemeNumber].indexOf("|") + 8, themes[selectedThemeNumber].indexOf("|") + 15);
         changeTheme(false);
       }
     </script>
