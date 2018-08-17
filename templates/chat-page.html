@@ -46,17 +46,20 @@
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
       opacity: 0.75;
-
+      position: relative;
     }
     #theme-changer {
-      position: fixed;
-      margin: 0 auto;
       display: block;
       outline: none;
       border: solid;
       border-width: 0.3vh;
       border-radius: .5vh;
       width: auto;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
     #theme-changer:hover {
       border-width: 0.1vh;
