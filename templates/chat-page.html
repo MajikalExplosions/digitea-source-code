@@ -162,7 +162,7 @@
         xhttp.send();
       }
       function parseResponse(text) {
-        chatBody = "";
+        chatBody = "</br>";
         var msgs = text.split("\n");
         for (var i = 0; i < msgs.length; i++) {
           msg = msgs[i]
@@ -173,6 +173,7 @@
             chatBody += "<div class=\"recieved-message c-secondary\"><p>" + msg.substring(msgs[i].indexOf(":") + 1) + "</p></div><div class=\"chat-spacer\"></div>"
           }
         }
+        document.getElementById("chat-history").innerHTML = chatBody;
       }
     </script>
   </head>
