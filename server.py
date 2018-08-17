@@ -36,7 +36,7 @@ def setMessage():
     chatHistory.append(request.values.get('message', 'null'))
     if (len(chatHistory) > 250):
         chatHistory = chatHistory[-250:]
-    getHistory()
+    return getHistory()
     #Do stuff
 
 @app.route("/cephaloholic")#Addicted to the head
