@@ -190,7 +190,7 @@ Copying stuff is hard(linked to one above)
       function changeTheme(isFromSettings) {
         if (isFromSettings) {
           selectedThemeNumber = parseInt(document.getElementById("theme-changer").value, 10);
-          document.getElementById("settings-icon").children[0].style.fill = "#" + themes[selectedThemeNumber].substring(themes[selectedThemeNumber].indexOf("|") + 15, themes[selectedThemeNumber].indexOf("|") + 21);
+          document.getElementById("settings-icon").children[0].style.fill = "#" + themes[selectedThemeNumber].substring(themes[selectedThemeNumber].indexOf("|") + 1, themes[selectedThemeNumber].indexOf("|") + 7);
         }
         var selectedTheme = themes[selectedThemeNumber];
         var primary = selectedTheme.substring(selectedTheme.indexOf("|") + 1, selectedTheme.indexOf("|") + 7);
@@ -282,7 +282,7 @@ Copying stuff is hard(linked to one above)
         updateChat();
         setInterval(updateChat, 1500);
         document.getElementById("theme-changer").style.visibility = "hidden";
-        document.getElementById("settings-icon").children[0].style.fill = "#" + themes[selectedThemeNumber].substring(themes[selectedThemeNumber].indexOf("|") + 8, themes[selectedThemeNumber].indexOf("|") + 15);
+        document.getElementById("settings-icon").children[0].style.fill = "#" + themes[selectedThemeNumber].substring(themes[selectedThemeNumber].indexOf("|") + 15, themes[selectedThemeNumber].indexOf("|") + 21);
       }
     </script>
   </head>
