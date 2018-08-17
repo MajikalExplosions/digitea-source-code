@@ -165,6 +165,7 @@
         chatBody = "";
         var msgs = text.split("\n");
         for (var i = 0; i < msgs.length; i++) {
+          msg = msgs[i]
           if (msg.substring(0, msgs[i].indexOf(":")) == username) {
             chatBody += "<div class=\"sent-message c-secondary\"><p>" + msg + "</p></div><div class=\"chat-spacer\"></div>"
           }
