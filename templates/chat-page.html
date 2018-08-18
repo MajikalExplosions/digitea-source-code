@@ -5,22 +5,26 @@ BUGLIST:
 
 Settings show up in the "middle" of the window at the top, not in the middle of the current window **DONE**
 
-Settings icon needs better animations or fix current
+Settings icon needs better animations or fix current **DONE**
 
-Add usernames
+! Add usernames
 
 Theme settings dropdown needs to not always show Default **DONE**
 
 Settings popup always has default theme **DONE**
 
-No autoscroll
+! No autoscroll
 
-Optimize for mobile devices
+! Optimize for mobile devices
 
 All guest numbers end in 1 **DONE**
 
-Reduce bandwidth needs(it currently gets all the chat messages all the time)
-Copying stuff is hard(linked to one above)
+! Reduce bandwidth needs(it currently gets all the chat messages all the time)
+! Copying stuff is hard(linked to one above)
+
+Add better themes(the current ones look funny)
+
+Links don't link to pages
 !-->
 <html>
   <head>
@@ -177,14 +181,12 @@ Copying stuff is hard(linked to one above)
       var username = "Guest " + (Math.floor(Math.random() * 10000) + 1);
       var themes = [
       "Default|444444|888888|dddddd",
-      "Sepia|9f7e69|d2bba0|f7f0e0",
-      "Dark|222222|505050|d1d1d1",
-      "Ocean Blue|304d6d|82a0bc|c5d5ea",
-      "Unicorn|7a69c6|c7b9ee|ffb2e9",
-      "High Contrast|0000ff|00ff00|ff0000",
-      "Literally Black|000000|010101|020202",
-      "Dark White|ffffff|000000|787878",
-      "Light Black|000000|ffffff|787878"
+      "Blue Applen't|009FFD|052F5F|FFA400",
+      "Lush Savannah|BCBD8B|0B2027|F4FEC1",
+      "Persian Rug|6A041D|DB9D47|32021F",
+      "Savannah|BCBD8B|0B2027|F4FEC1",
+      "Painted Desert|ECCFC3|ECB8A5|904C77",
+      "Metal Sea|66717E|140F2D|3F88C5"
       ];
       var selectedThemeNumber = 0;
       function changeTheme(isFromSettings) {
