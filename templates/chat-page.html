@@ -22,7 +22,9 @@ All guest numbers end in 1 **DONE**
 ! Reduce bandwidth needs(it currently gets all the chat messages all the time)
 ! Copying stuff is hard(linked to one above)
 
-Add better themes(the current ones look funny)
+Add better themes(the current ones look funny) **Acceptable**
+
+Spaces show up as 1 not 10
 
 Links don't link to pages
 !-->
@@ -222,6 +224,7 @@ Links don't link to pages
           document.getElementById("theme-changer").innerHTML = pSettings;
           document.getElementById("settings-wrapper").style.width = "25%";
           document.getElementById("settings-wrapper").style.height = "25%";
+          document.getElementById("settings-wrapper").style.minWidth = "250px";
           document.getElementById("settings-icon").children[0].style.fill = "#" + selectedTheme.substring(selectedTheme.indexOf("|") + 1, selectedTheme.indexOf("|") + 7);
           document.getElementById("theme-changer").style.visibility = "visible";
           document.getElementById("theme-changer").value = selectedThemeNumber.toString();
@@ -263,7 +266,7 @@ Links don't link to pages
         };
         xhttp.open("POST", "https://digitea.herokuapp.com/send-message");
         xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhttp.send('message=' + encodeURIComponent(username + ":" + document.getElementById("chat-input").value));
+        xhttp.send('message=' + encodeURIComponent(username + ": " + document.getElementById("chat-input").value));
         document.getElementById("chat-input").value = "";
       }
       function parseResponse(text) {
@@ -271,8 +274,9 @@ Links don't link to pages
         var msgs = text.split("\n");
         for (var i = 0; i < msgs.length; i++) {
           msg = msgs[i]
+          msg = msg.replace(new RegExp(" ", 'g'), "&nbsp");
           if (msg.substring(0, msgs[i].indexOf(":")) == username) {
-            chatBody += "<div class=\"sent-message c-secondary\"><p>" + msg.substring(msgs[i].indexOf(":") + 1) + "</p></div><div class=\"chat-spacer\"></div>";
+            chatBody += "<div class=\"sent-message c-secondary\"><p>" + msg.substring(msgs[i].indexOf(":") + 2) + "</p></div><div class=\"chat-spacer\"></div>";
           }
           else {
             chatBody += "<div class=\"recieved-message c-secondary\"><p>" + msg + "</p></div><div class=\"chat-spacer\"></div>";
