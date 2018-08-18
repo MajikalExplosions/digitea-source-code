@@ -186,10 +186,12 @@ Links don't link to pages
       "Sailor Outfit|009FFD|052F5F|FFA400",
       "Lush Savannah|BCBD8B|0B2027|F4FEC1",
       "Persian Rug|6A041D|DB9D47|32021F",
-      "Painted Desert|ECCFC3|ECB8A5|904C77",
+      "Rose Desert|ECCFC3|ECB8A5|904C77",
       "Metal Sea|66717E|140F2D|3F88C5",
       "Just Pink.|DD3EA3|6200B3|6B86FF",
       "Warm Beaches|B1E5F2|F4E3B2|33673B",
+      "Genesis|8731BE|3D627D|FFFADE",
+      "Shasta|66AD25|005400|00BBF5",
       "Trumpland|B22234|3C3B6E|FFFFFF"
       ];
       var selectedThemeNumber = 0;
@@ -222,8 +224,8 @@ Links don't link to pages
             pSettings += "<option value=\"" + i.toString() + "\">" + themes[i].substring(0, themes[i].indexOf("|"));
           }
           document.getElementById("theme-changer").innerHTML = pSettings;
-          document.getElementById("settings-wrapper").style.width = "25%";
-          document.getElementById("settings-wrapper").style.height = "25%";
+          document.getElementById("settings-wrapper").style.width = "40%";
+          document.getElementById("settings-wrapper").style.height = "40%";
           document.getElementById("settings-wrapper").style.minWidth = "250px";
           document.getElementById("settings-icon").children[0].style.fill = "#" + selectedTheme.substring(selectedTheme.indexOf("|") + 1, selectedTheme.indexOf("|") + 7);
           document.getElementById("theme-changer").style.visibility = "visible";
